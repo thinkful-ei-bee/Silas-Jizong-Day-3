@@ -109,7 +109,61 @@ characterArray.push(Arwen);
 
 //characterArray.find(character => character.name='Arwen').describe();
 
-const hobbits = characterArray.filter(char => char.race === 'Hobbit');
-const highAttack = characterArray.filter(char => char.attack > 5);
+//const hobbits = characterArray.filter(char => char.race === 'Hobbit');
+//const highAttack = characterArray.filter(char => char.attack > 5);
 
-characterArray.forEach(guy => guy.describe());
+//characterArray.forEach(guy => guy.describe());
+
+//8. BONUS: A Database Search
+
+const HEROES = [
+  { id: 1, name: 'Captain America', squad: 'Avengers' },
+  { id: 2, name: 'Iron Man', squad: 'Avengers' },
+  { id: 3, name: 'Spiderman', squad: 'Avengers' },
+  { id: 4, name: 'Superman', squad: 'Justice League' },
+  { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
+  { id: 6, name: 'Aquaman', squad: 'Justice League' },
+  { id: 7, name: 'Hulk', squad: 'Avengers' },
+];
+
+function findOne(arr,query){
+  let heroKeys = Object.keys(arr[0]);
+
+  if (!('id' in query)){
+    if(!('name' in query)){
+      if(!('squad' in query)){
+        return 'No such property';
+      }else{
+        let result = arr.find(hero => hero.squad === query.squad);
+        return result===undefined?null:result;
+      }
+
+      
+    }  else {
+
+      return arr.find(hero => hero.name === query.name);
+    }
+
+    
+  }else{
+      if(('id' in query && 'name' in query)){
+        let result = arr.find(hero => hero.id === query.id && hero.name ===query.name);
+        return result===undefined?null:result;
+      }
+     let result = arr.find(hero => hero.id === query.id);
+     return result===undefined?null:result;
+  }
+}
+
+// if id not there, use name or squad 
+// if id is there, use id. 
+// if id and names not there, use squad. 
+
+
+
+console.log(findOne(HEROES, { id: 1 }));
+console.log(findOne(HEROES, { id: 10 }));
+console.log(findOne(HEROES, { id: 2, name: 'Aquaman' }));
+console.log(findOne(HEROES, { id: 5, squad: 'Justice League' }));
+console.log(findOne(HEROES, { squad: 'Justice League' }));
+console.log(findOne(HEROES, { squad: 'Justice' }));
