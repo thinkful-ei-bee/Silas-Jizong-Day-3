@@ -56,6 +56,7 @@ for(const person of staff){
 }
 
 
+<<<<<<< HEAD
 // word[0] = first letter (if it's insdie the cpherKey, then it is also the key)
 // cpherKey[word[0]] 
 
@@ -109,3 +110,30 @@ let bilbo = createCharacter('Bilbo Baggins','bilbo','Hobbit','The Shire',2,1);
 
 
 
+||||||| 9203953... adv obj drill cracking the code - David
+// word[0] = first letter (if it's insdie the cpherKey, then it is also the key)
+// cpherKey[word[0]] 
+
+let message = 'craft block argon meter bells brown croon droop';
+
+function decode(word){
+  const cpherKey = {a:2,b:3,c:4,d:5};
+  return (word[0] in cpherKey)?word[cpherKey[word[0]]-1]:' ';
+}
+
+
+
+function decodeWord(message){
+  let wordList = message.split(' ');
+  let result = [];
+  for(const word of wordList){
+    result.push(decode(word));
+  }
+  return result.join('');
+}
+
+console.log(decodeWord(message));
+
+
+=======
+>>>>>>> parent of 9203953... adv obj drill cracking the code - David
