@@ -135,5 +135,29 @@ function decodeWord(message){
 console.log(decodeWord(message));
 
 
-=======
->>>>>>> parent of 9203953... adv obj drill cracking the code - David
+function createCharacter(name, nickname,race,origin,attack,defense){
+  return {name:name,        
+  nickname:nickname,
+  race:race,      
+  origin:origin,         
+  attack:attack,
+  defense:defense,
+  describe:function(){
+    console.log(`${this.name} is a ${this.race} from ${this.origin}`);
+  },
+  evaluateFight:function(character){
+
+    
+    let x = this.attack-character.defense;
+    let y = character.attack-this.defense;
+    
+
+   
+
+    return `Your opponent takes ${x<0?0:x} damage and you receive ${y<0?0:y} damage`;
+  },
+}
+}
+
+let gandalf = createCharacter(`Gandalf the White`,'gandalf','Wizard','Middle Earth',10,6);
+let bilbo = createCharacter('Bilbo Baggins','bilbo','Hobbit','The Shire',2,1);
