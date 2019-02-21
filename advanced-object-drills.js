@@ -26,3 +26,27 @@ const mealDetector = {
 };
 
 console.log(mealDetector.meals[3]);
+
+let staff = [
+{
+name:'John',
+jobTitle:'Technician'
+},{
+name:'Robby',
+jobTitle:'Manager'
+},{
+name:'Jacky',
+jobTitle:'Accountant'
+},{
+name:'Laos',
+jobTitle:'Sales Manager'
+},{
+name:'Josh',
+jobTitle:'Boss'}
+]
+
+for(const person in staff){
+  console.log(`${person.name} is ${person.jobTitle} of SAA crop`);
+}
+
+
