@@ -74,3 +74,17 @@ var testData = [
 
 
 // console.log(enrollInSummerSchool(testData));
+
+const scratchData = [
+  { id: 22, foo: 'bar' },
+  { id: 28, foo: 'bizz' },
+  { id: 19, foo: 'bazz' },
+];
+
+function findById(items, idNum) {
+  // your code here
+  // filter items, find each object in the array
+  // with matching idNum
+  // if true, return that object
+  return items.filter(obj => obj.id === idNum)[0];
+}
