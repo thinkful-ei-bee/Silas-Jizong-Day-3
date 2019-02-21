@@ -17,9 +17,9 @@ const testObject ={
   spam:'spam',
 };
 
-for(const item in testObject){
-  console.log(item);
-}
+//for(const item in testObject){
+  //console.log(item);
+//}
 
 const mealDetector = {
   meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'],
@@ -28,37 +28,32 @@ const mealDetector = {
 console.log(mealDetector.meals[3]);
 
 let staff = [
-{
-name:'John',
-jobTitle:'Technician',
-boss: 'Josh',
-},{
-name:'Robby',
-jobTitle:'Manager',
-boss: 'Josh',
-},{
-name:'Jacky',
-jobTitle:'Accountant',
-boss: 'Josh',
-},{
-name:'Laos',
-jobTitle:'Sales Manager',
-boss: 'Josh',
-},{
-name:'Josh',
-jobTitle:'Boss'}
-]
+  {
+    name:'John',
+    jobTitle:'Technician',
+    boss: 'Josh',
+  },{
+    name:'Robby',
+    jobTitle:'Manager',
+    boss: 'Josh',
+  },{
+    name:'Jacky',
+    jobTitle:'Accountant',
+    boss: 'Josh',
+  },{
+    name:'Laos',
+    jobTitle:'Sales Manager',
+    boss: 'Josh',
+  },{
+    name:'Josh',
+    jobTitle:'Boss'}
+];
 
-for(const person of staff){
-  (person.boss)
-    ? console.log(`${person.jobTitle} ${person.name} reports to ${person.boss}.`)
-    : console.log(`${person.jobTitle} ${person.name} doesn't report to anybody.`);
-}
-
-
-<<<<<<< HEAD
-// word[0] = first letter (if it's insdie the cpherKey, then it is also the key)
-// cpherKey[word[0]] 
+//for(const person of staff){
+  //(person.boss)
+    //? console.log(`${person.jobTitle} ${person.name} reports to ${person.boss}.`)
+    //: console.log(`${person.jobTitle} ${person.name} doesn't report to anybody.`);
+//}
 
 let message = 'craft block argon meter bells brown croon droop';
 
@@ -66,7 +61,6 @@ function decode(word){
   const cpherKey = {a:2,b:3,c:4,d:5};
   return (word[0] in cpherKey)?word[cpherKey[word[0]]-1]:' ';
 }
-
 
 
 function decodeWord(message){
@@ -78,86 +72,44 @@ function decodeWord(message){
   return result.join('');
 }
 
-console.log(decodeWord(message));
+//console.log(decodeWord(message));
 
 
-function createCharacter(name, nickname,race,origin,attack,defense){
+function createCharacter(name, nickname,race,origin,weapon,attack,defense){
   return {name:name,        
-  nickname:nickname,
-  race:race,      
-  origin:origin,         
-  attack:attack,
-  defense:defense,
-  describe:function(){
-    console.log(`${this.name} is a ${this.race} from ${this.origin}`);
-  },
-  evaluateFight:function(character){
-
-    
-    let x = this.attack-character.defense;
-    let y = character.attack-this.defense;
-    
-
-   
-
-    return `Your opponent takes ${x<0?0:x} damage and you receive ${y<0?0:y} damage`;
-  },
-}
+    nickname:nickname,
+    race:race,      
+    origin:origin,
+    weapon:weapon,         
+    attack:attack,
+    defense:defense,
+    describe:function(){
+      console.log(`${this.name} is a ${this.race} of ${origin} who uses a ${weapon}.`);
+    },
+    evaluateFight:function(character){
+      let x = this.attack-character.defense;
+      let y = character.attack-this.defense;
+      return `Your opponent takes ${x<0?0:x} damage and you receive ${y<0?0:y} damage`;
+    },
+  };
 }
 
-let gandalf = createCharacter(`Gandalf the White`,'gandalf','Wizard','Middle Earth',10,6);
-let bilbo = createCharacter('Bilbo Baggins','bilbo','Hobbit','The Shire',2,1);
+let Gandalf = createCharacter('Gandalf the White','gandalf','Wizard','Middle Earth','wizard staff',10,6);
+let Bilbo = createCharacter('Bilbo Baggins','bilbo','Hobbit','The Shire','Ring',2,1);
+let Aragorn = createCharacter('Aragorn son of Arathorn','aragorn','Man','Dunnedain','Anduril',6,8);
+let Legolas = createCharacter('Legolas','Legolas','Elf','Woodland Realm','Bow and Arrow',8,5);
+let Arwen = createCharacter('Arwen','Undomiel','Half-Elf','Rivendell','Hadhafang',4,3);
 
+const characterArray = [];
+characterArray.push(Gandalf);
+characterArray.push(Bilbo);
+characterArray.push(Aragorn);
+characterArray.push(Legolas);
+characterArray.push(Arwen);
 
+//characterArray.find(character => character.name='Arwen').describe();
 
-||||||| 9203953... adv obj drill cracking the code - David
-// word[0] = first letter (if it's insdie the cpherKey, then it is also the key)
-// cpherKey[word[0]] 
+const hobbits = characterArray.filter(char => char.race === 'Hobbit');
+const highAttack = characterArray.filter(char => char.attack > 5);
 
-let message = 'craft block argon meter bells brown croon droop';
-
-function decode(word){
-  const cpherKey = {a:2,b:3,c:4,d:5};
-  return (word[0] in cpherKey)?word[cpherKey[word[0]]-1]:' ';
-}
-
-
-
-function decodeWord(message){
-  let wordList = message.split(' ');
-  let result = [];
-  for(const word of wordList){
-    result.push(decode(word));
-  }
-  return result.join('');
-}
-
-console.log(decodeWord(message));
-
-
-function createCharacter(name, nickname,race,origin,attack,defense){
-  return {name:name,        
-  nickname:nickname,
-  race:race,      
-  origin:origin,         
-  attack:attack,
-  defense:defense,
-  describe:function(){
-    console.log(`${this.name} is a ${this.race} from ${this.origin}`);
-  },
-  evaluateFight:function(character){
-
-    
-    let x = this.attack-character.defense;
-    let y = character.attack-this.defense;
-    
-
-   
-
-    return `Your opponent takes ${x<0?0:x} damage and you receive ${y<0?0:y} damage`;
-  },
-}
-}
-
-let gandalf = createCharacter(`Gandalf the White`,'gandalf','Wizard','Middle Earth',10,6);
-let bilbo = createCharacter('Bilbo Baggins','bilbo','Hobbit','The Shire',2,1);
+characterArray.forEach(guy => guy.describe());
