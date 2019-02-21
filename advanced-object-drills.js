@@ -1,5 +1,9 @@
+// Thinkful day 3 drills advanced object 02/21/2019
+// Silas and Jizong
 'use strict';
 
+// create an ojbect loaf has properties=> flour,water,and a method hydration,using this
+// for self reference 
 const loaf = {
   flour: 300,
   water: 210,
@@ -17,16 +21,15 @@ const testObject ={
   spam:'spam',
 };
 
-//for(const item in testObject){
-  //console.log(item);
-//}
 
+// create an object mealDetector and find the 4th meal of the day
 const mealDetector = {
   meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'],
 };
 
 console.log(mealDetector.meals[3]);
 
+// create a staff object with name and job title. 
 let staff = [
   {
     name:'John',
@@ -55,6 +58,7 @@ let staff = [
     //: console.log(`${person.jobTitle} ${person.name} doesn't report to anybody.`);
 //}
 
+// decoder
 let message = 'craft block argon meter bells brown croon droop';
 
 function decode(word){
@@ -62,7 +66,7 @@ function decode(word){
   return (word[0] in cpherKey)?word[cpherKey[word[0]]-1]:' ';
 }
 
-
+// decodedWord takes message and invoke decode() to decode every word of the message. 
 function decodeWord(message){
   let wordList = message.split(' ');
   let result = [];
@@ -74,7 +78,7 @@ function decodeWord(message){
 
 //console.log(decodeWord(message));
 
-
+// create LOTR character 
 function createCharacter(name, nickname,race,origin,weapon,attack,defense){
   return {name:name,        
     nickname:nickname,
@@ -94,12 +98,14 @@ function createCharacter(name, nickname,race,origin,weapon,attack,defense){
   };
 }
 
+// create 5 characters
 let Gandalf = createCharacter('Gandalf the White','gandalf','Wizard','Middle Earth','wizard staff',10,6);
 let Bilbo = createCharacter('Bilbo Baggins','bilbo','Hobbit','The Shire','Ring',2,1);
 let Aragorn = createCharacter('Aragorn son of Arathorn','aragorn','Man','Dunnedain','Anduril',6,8);
 let Legolas = createCharacter('Legolas','Legolas','Elf','Woodland Realm','Bow and Arrow',8,5);
 let Arwen = createCharacter('Arwen','Undomiel','Half-Elf','Rivendell','Hadhafang',4,3);
 
+// push characters into a array
 const characterArray = [];
 characterArray.push(Gandalf);
 characterArray.push(Bilbo);
@@ -169,6 +175,7 @@ console.log(findOne(HEROES, { squad: 'Justice League' }));
 console.log(findOne(HEROES, { squad: 'Justice' }));
 */
 
+// bonus II, create a findOne() method inside the object Database and perform the same task as findOne() above. 
 const Database = {
   findOne: function(query){
   let arr = this.store.heroes;
