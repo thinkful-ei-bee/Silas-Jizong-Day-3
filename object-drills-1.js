@@ -88,3 +88,22 @@ function findById(items, idNum) {
   // if true, return that object
   return items.filter(obj => obj.id === idNum)[0];
 }
+
+
+
+
+function validateKeys(object, expectedKeys){
+  let objectKey = Object.keys(object);
+  if (!Object.keys(object).length === expectedKeys.length){
+      return false;
+  }
+
+  for (const key in expectedKeys){
+    if(!(key in objectKey)){
+      return false;
+    }
+  }
+  return true;
+}
+
+
