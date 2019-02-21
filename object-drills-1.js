@@ -11,8 +11,6 @@ function createMyObject() {
   };
 }
 
-let objectTesting = {};
-
 function updateObject(obj){
   obj.foo ='foo';
   obj.bar = 'bar';
@@ -20,5 +18,13 @@ function updateObject(obj){
   obj.bang = 'bang'
 }
 
-updateObject(objectTesting);
-console.log(objectTesting);
+function personMaker() {
+  var person = {
+    firstName: 'Paul',
+    lastName: 'Jones',
+    fullName: function(){
+      return this.firstName + ' ' + this.lastName;
+    }
+  };
+  return person.fullName();
+}
