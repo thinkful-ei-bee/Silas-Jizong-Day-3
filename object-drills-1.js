@@ -10,3 +10,15 @@ function createMyObject() {
     },
   };
 }
+
+let objectTesting = {};
+
+function updateObject(obj){
+  obj.foo ='foo';
+  obj.bar = 'bar';
+  obj.bizz = 'bizz';
+  obj.bang = 'bang'
+}
+
+updateObject(objectTesting);
+console.log(objectTesting);
