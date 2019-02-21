@@ -56,3 +56,27 @@ for(const person of staff){
 }
 
 
+// word[0] = first letter (if it's insdie the cpherKey, then it is also the key)
+// cpherKey[word[0]] 
+
+let message = 'craft block argon meter bells brown croon droop';
+
+function decode(word){
+  const cpherKey = {a:2,b:3,c:4,d:5};
+  return (word[0] in cpherKey)?word[cpherKey[word[0]]-1]:' ';
+}
+
+
+
+function decodeWord(message){
+  let wordList = message.split(' ');
+  let result = [];
+  for(const word of wordList){
+    result.push(decode(word));
+  }
+  return result.join('');
+}
+
+console.log(decodeWord(message));
+
+
