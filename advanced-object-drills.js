@@ -55,22 +55,4 @@ for(const person of staff){
     : console.log(`${person.jobTitle} ${person.name} doesn't report to anybody.`);
 }
 
-// between 2 char objects
-// grab both of their attack and def
-// 
 
-function createCharacter(name, nickname, race, origin, attack, defense){
-  return {
-    name: name,
-    nickname: nickname,
-    race: race,
-    origin: origin,
-    attack: attack,
-    defense: defense,
-    describe: function(){
-      return `${this.name} is a ${this.race} from ${this.origin}.`;
-    },
-    evaluateFight: function(enemy){
-    },
-  };
-}
