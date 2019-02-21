@@ -30,23 +30,29 @@ console.log(mealDetector.meals[3]);
 let staff = [
 {
 name:'John',
-jobTitle:'Technician'
+jobTitle:'Technician',
+boss: 'Josh',
 },{
 name:'Robby',
-jobTitle:'Manager'
+jobTitle:'Manager',
+boss: 'Josh',
 },{
 name:'Jacky',
-jobTitle:'Accountant'
+jobTitle:'Accountant',
+boss: 'Josh',
 },{
 name:'Laos',
-jobTitle:'Sales Manager'
+jobTitle:'Sales Manager',
+boss: 'Josh',
 },{
 name:'Josh',
 jobTitle:'Boss'}
 ]
 
-for(const person in staff){
-  console.log(`${person.name} is ${person.jobTitle} of SAA crop`);
+for(const person of staff){
+  (person.boss)
+    ? console.log(`${person.jobTitle} ${person.name} reports to ${person.boss}.`)
+    : console.log(`${person.jobTitle} ${person.name} doesn't report to anybody.`);
 }
 
 
