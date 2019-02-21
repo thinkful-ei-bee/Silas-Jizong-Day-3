@@ -43,4 +43,10 @@ function keyDeleter(obj) {
 }
 //keyDeleter(sampleObj);
 
+function makeStudentsReport(data) {
+  let answer = [];
+  for (let i = 0; i < data.length; i ++){
+    answer.push(`name: ${data[i].name} , grade: ${data[i].grade}`);
+  } return answer;
+}
 
