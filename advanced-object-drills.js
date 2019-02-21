@@ -21,4 +21,8 @@ for(const item in testObject){
   console.log(item);
 }
 
+const mealDetector = {
+  meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'],
+};
 
+console.log(mealDetector.meals[3]);
