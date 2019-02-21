@@ -50,3 +50,27 @@ function makeStudentsReport(data) {
   } return answer;
 }
 
+function enrollInSummerSchool(students){
+  students.forEach(student => student.status = 'In Summer school' );
+  return students;
+}
+
+var testData = [
+  {
+    name: 'Burt',
+    status: 'Playing hooky',
+    course: 'Biology',
+  },
+  {
+    name: 'Melanie',
+    status: 'Sick',
+    course: 'Mathematics',
+  },
+  {
+    name: 'Leonard',
+    status: 'AWOL',
+    course: 'Computer science',
+  },];
+
+
+// console.log(enrollInSummerSchool(testData));
