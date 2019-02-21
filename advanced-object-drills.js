@@ -7,3 +7,18 @@ const loaf = {
     return (this.water / this.flour) * 100;
   }
 };
+
+
+const testObject ={
+  foo:'foo', 
+  bar:'bar', 
+  fum:'fum', 
+  quux:'quux',
+  spam:'spam',
+};
+
+for(const item in testObject){
+  console.log(item);
+}
+
+
